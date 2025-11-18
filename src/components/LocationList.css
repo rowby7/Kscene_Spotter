@@ -1,0 +1,38 @@
+.location-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.location-list-container h1 {
+  text-align: center;
+}
+
+.location-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.location-table thead tr {
+  background-color: #f0f0f0;
+}
+
+.location-table th,
+.location-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.location-table th:nth-child(1) {
+  width: 20%;
+}
+
+.location-table th:nth-child(2) {
+  width: 25%;
+}
+
+.location-table th:nth-child(3) {
+  width: 55%;
+}
