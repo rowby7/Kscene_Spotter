@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import LocationList from './components/locationList'
+import LocationList from './components/LocationList'
 import Map from './components/Map'
 import AddLocationForm from './components/AddLocationForm'
 
