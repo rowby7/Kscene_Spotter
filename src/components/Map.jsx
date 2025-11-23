@@ -1,13 +1,25 @@
 import { useEffect, useState } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../firebase';
 
 export default function Map() {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    // Fetch locations
-    fetch('http://localhost:5000/api/locations')
-      .then(response => response.json())
-      .then(data => setLocations(data));
+    const fetchLocations = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'locations'));
+        const locationsData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setLocations(locationsData);
+      } catch (error) {
+        console.error('Error fetching locations:', error);
+      }
+    };
+
+    fetchLocations();
   }, []);
 
   useEffect(() => {
